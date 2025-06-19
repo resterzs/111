@@ -11,7 +11,8 @@ def generate_html(account_id, percentage, amount=None):
     if amount and int(amount) > 0:
         lines.append(f'<<link href=To warmup account, a minimum deposit of {amount} INR is required>')
 
-    lines_joined = "\n ".join(lines)  # Вынес сюда
+    # Вынеси join из f-string:
+    lines_joined = "\n ".join(lines)
 
     html_template = f"""<!DOCTYPE html>
 <html lang="en">
@@ -34,6 +35,7 @@ def generate_html(account_id, percentage, amount=None):
 </body>
 </html>"""
     return html_template
+
 
 def highlight_html(text_widget):
     text_widget.tag_config('tag', foreground='#FF5555')
