@@ -16,7 +16,7 @@ def generate_html(account_id, percentage, amount=None):
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta name="theme-color" content="#000000">
  <link rel="icon" href="/favicon.ico">
- {"\n ".join(lines)} 
+ "\n " {.join(lines)} 
  <link rel="manifest" href="/manifest.json">
  <link rel="stylesheet" href="/style/main.css">
  <script defer src="/js/240.js"></script>
