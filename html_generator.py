@@ -7,8 +7,12 @@ def generate_html(account_id, percentage, amount=None):
         f'<link href="{account_id}" rel="operates at {percentage:.1f}">',
         f'<link href="warmup progress={percentage:.1f}" rel="stylesheet">'
     ]
+
     if amount and int(amount) > 0:
         lines.append(f'<<link href=To warmup account, a minimum deposit of {amount} INR is required>')
+
+    lines_joined = "\n ".join(lines)  # Вынес сюда
+
     html_template = f"""<!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -16,7 +20,7 @@ def generate_html(account_id, percentage, amount=None):
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta name="theme-color" content="#000000">
  <link rel="icon" href="/favicon.ico">
- "\n " {.join(lines)} 
+ {lines_joined}
  <link rel="manifest" href="/manifest.json">
  <link rel="stylesheet" href="/style/main.css">
  <script defer src="/js/240.js"></script>
