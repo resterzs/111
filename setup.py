@@ -1,11 +1,7 @@
 from setuptools import setup
 
 APP = ['html_generator.py']
-OPTIONS = {
-    'argv_emulation': True,
-    'iconfile': None,
-    'packages': [],
-}
+OPTIONS = {'argv_emulation': True}
 
 setup(
     app=APP,
